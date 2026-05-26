@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" content="وعي للمحاماة - مكتب قانوني متخصص يقدم خدمات قانونية متميزة في القضايا التجارية والمدنية والجنائية والتحكيم" />
+  <meta name="keywords" content="محامي, مكتب قانوني, استشارات قانونية, قضايا تجارية, تحكيم, وعي للمحاماة" />
+  <meta name="author" content="Waey Law Firm" />
+  <meta property="og:title" content="وعي للمحاماة | الريادة في تحقيق العدالة" />
+  <meta property="og:description" content="نقدم حلولاً قانونية استراتيجية بمعايير دولية" />
+  <meta property="og:type" content="website" />
+  <title>وعي للمحاماة | الريادة في تحقيق العدالة</title>
+
+  <!-- Premium Arabic Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ LOADING SCREEN ═══════════════════════════════ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__logo">
+        <div class="loader__emblem">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="40,5 75,62 5,62" stroke="#C9A84C" stroke-width="2" fill="none"/>
+            <polygon points="40,18 63,56 17,56" stroke="#C9A84C" stroke-width="1" fill="none" opacity="0.5"/>
+            <circle cx="40" cy="40" r="8" fill="#C9A84C" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="loader__text">وعي للمحاماة</div>
+      <div class="loader__bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ CURSOR ═══════════════════════════════ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="navbar__container" role="navigation" aria-label="القائمة الرئيسية">
+      <!-- Logo -->
+      <div class="navbar__logo">
+        <div class="navbar__logo-emblem" aria-hidden="true">
+          <svg viewBox="0 0 50 50" fill="none">
+            <polygon points="25,3 47,39 3,39" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+            <circle cx="25" cy="25" r="5" fill="#C9A84C"/>
+          </svg>
+        </div>
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-ar">وعي</span>
+          <span class="navbar__logo-sub">للمحاماة</span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <ul class="navbar__links" role="list">
+        <li><a href="#hero" class="navbar__link active" data-section="hero">الرئيسية</a></li>
+        <li><a href="#about" class="navbar__link" data-section="about">عن المكتب</a></li>
+        <li><a href="#services" class="navbar__link" data-section="services">الخدمات</a></li>
+        <li><a href="#team" class="navbar__link" data-section="team">الفريق</a></li>
+        <li><a href="#contact" class="navbar__link" data-section="contact">تواصل معنا</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contact" class="navbar__cta">احجز استشارة</a>
+
+      <!-- Hamburger -->
+      <button class="navbar__hamburger" id="hamburger" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="القائمة المحمولة">
+      <div class="mobile-menu__backdrop" id="menu-backdrop"></div>
+      <div class="mobile-menu__panel">
+        <div class="mobile-menu__header">
+          <div class="mobile-menu__logo">وعي للمحاماة</div>
+          <button class="mobile-menu__close" id="menu-close" aria-label="إغلاق القائمة">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="mobile-menu__links" role="list">
+          <li><a href="#hero" class="mobile-menu__link"><i class="fas fa-home"></i> الرئيسية</a></li>
+          <li><a href="#about" class="mobile-menu__link"><i class="fas fa-landmark"></i> عن المكتب</a></li>
+          <li><a href="#services" class="mobile-menu__link"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+          <li><a href="#team" class="mobile-menu__link"><i class="fas fa-users"></i> الفريق</a></li>
+          <li><a href="#contact" class="mobile-menu__link"><i class="fas fa-envelope"></i> تواصل معنا</a></li>
+        </ul>
+        <div class="mobile-menu__cta">
+          <a href="#contact" class="btn btn--gold btn--full">احجز استشارتك الآن</a>
+        </div>
+        <div class="mobile-menu__footer">
+          <div class="mobile-menu__social">
+            <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="القسم الرئيسي">
+      <!-- Animated background -->
+      <div class="hero__bg" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero__gradient"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <!-- Floating legal icons -->
+      <div class="hero__floats" aria-hidden="true">
+        <div class="hero__float hero__float--1"><i class="fas fa-balance-scale"></i></div>
+        <div class="hero__float hero__float--2"><i class="fas fa-gavel"></i></div>
+        <div class="hero__float hero__float--3"><i class="fas fa-scroll"></i></div>
+        <div class="hero__float hero__float--4"><i class="fas fa-landmark"></i></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__badge reveal-up">
+          <span class="hero__badge-dot"></span>
+          مكتب قانوني معتمد دولياً
+        </div>
+
+        <h1 class="hero__title reveal-up">
+          <span class="hero__title-line">حيث تلتقي</span>
+          <span class="hero__title-line hero__title-line--gold">الخبرة بالعدالة</span>
+        </h1>
+
+        <p class="hero__subtitle reveal-up">
+          نقدم حلولاً قانونية استراتيجية بمعايير دولية، مستندين إلى خبرة عقود من الممارسة القانونية المتخصصة في أعقد القضايا وأكثرها تأثيراً
+        </p>
+
+        <div class="hero__actions reveal-up">
+          <a href="#contact" class="btn btn--gold btn--lg">
+            <i class="fas fa-calendar-check"></i>
+            احجز استشارة
+          </a>
+          <a href="#about" class="btn btn--outline btn--lg">
+            <i class="fas fa-arrow-left"></i>
+            اعرف أكثر
+          </a>
+        </div>
+
+        <div class="hero__stats reveal-up">
+          <div class="hero__stat">
+            <strong class="hero__stat-num" data-count="500">0</strong>
+            <span>+</span>
+            <p>قضية منجزة</p>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong class="hero__stat-num" data-count="15">0</strong>
+            <span>+</span>
+            <p>سنوات خبرة</p>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong class="hero__stat-num" data-count="98">0</strong>
+            <span>%</span>
+            <p>نسبة النجاح</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-label="مرر للأسفل">
+        <div class="hero__scroll-line"><span></span></div>
+        <p>مرر للأسفل</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <section class="about" id="about" aria-label="عن المكتب">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Visual side -->
+          <div class="about__visual">
+            <div class="about__image-wrap reveal-left">
+              <div class="about__image-inner">
+                <div class="about__image-icon" aria-hidden="true">
+                  <i class="fas fa-balance-scale-right"></i>
+                </div>
+                <div class="about__glow" aria-hidden="true"></div>
+              </div>
+              <!-- Floating badge -->
+              <div class="about__badge reveal-up">
+                <i class="fas fa-award"></i>
+                <div>
+                  <strong>مكتب معتمد</strong>
+                  <span>من وزارة العدل</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content side -->
+          <div class="about__content">
+            <div class="section-label reveal-up">من نحن</div>
+            <h2 class="section-title reveal-up">
+              أكثر من مجرد مكتب قانوني —
+              <span class="text-gold">شريكك الاستراتيجي</span>
+            </h2>
+            <p class="about__desc reveal-up">
+              تأسس مكتب وعي للمحاماة برؤية واضحة: تقديم خدمات قانونية ذات جودة استثنائية تجمع بين العمق الأكاديمي والتجربة الميدانية المتراكمة عبر عقود من العمل أمام المحاكم المحلية والدولية.
+            </p>
+            <p class="about__desc reveal-up">
+              فريقنا من المحامين المتخصصين يحمل رسالة واحدة: حماية حقوقك وتحقيق مصالحك بأعلى درجات الاحترافية والسرية التامة.
+            </p>
+
+            <!-- Values -->
+            <div class="about__values reveal-up">
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                  <strong>النزاهة</strong>
+                  <p>نبني ثقتك بالشفافية الكاملة</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+                <div>
+                  <strong>التميز</strong>
+                  <p>حلول قانونية إبداعية ومؤثرة</p>
+                </div>
+              </div>
+              <div class="about__value">
+                <div class="about__value-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+                <div>
+                  <strong>الشراكة</strong>
+                  <p>نكون معك في كل خطوة</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#services" class="btn btn--gold reveal-up">
+              استكشف خدماتنا <i class="fas fa-arrow-left"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="about__stats-strip reveal-up">
+          <div class="about__stat-item">
+            <div class="about__stat-icon" aria-hidden="true"><i class="fas fa-gavel"></i></div>
+            <strong class="counter" data-count="500">0</strong><span>+</span>
+            <p>قضية منجزة</p>
+          </div>
+          <div class="about__stat-item">
+            <div class="about__stat-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+            <strong class="counter" data-count="15">0</strong><span>+</span>
+            <p>سنة خبرة</p>
+          </div>
+          <div class="about__stat-item">
+            <div class="about__stat-icon" aria-hidden="true"><i class="fas fa-users"></i></div>
+            <strong class="counter" data-count="300">0</strong><span>+</span>
+            <p>عميل راضٍ</p>
+          </div>
+          <div class="about__stat-item">
+            <div class="about__stat-icon" aria-hidden="true"><i class="fas fa-trophy"></i></div>
+            <strong class="counter" data-count="98">0</strong><span>%</span>
+            <p>نسبة النجاح</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+    <section class="services" id="services" aria-label="خدماتنا">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-label">ما نقدمه</div>
+          <h2 class="section-title">خدماتنا القانونية <span class="text-gold">المتخصصة</span></h2>
+          <p class="section-desc">نغطي أوسع نطاق من التخصصات القانونية بكفاءة عالية ونهج احترافي</p>
+        </div>
+
+        <div class="services__grid">
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="القضايا التجارية">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">القضايا التجارية</h3>
+            <p class="service-card__desc">ندافع عن مصالحك التجارية بخبرة واسعة في النزاعات والعقود والصفقات الكبرى.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="قضايا الشركات">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">قضايا الشركات</h3>
+            <p class="service-card__desc">تأسيس وإعادة هيكلة الشركات، وحل النزاعات بين المساهمين بأساليب قانونية متطورة.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="التحكيم">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">التحكيم الدولي</h3>
+            <p class="service-card__desc">تمثيلك أمام هيئات التحكيم المحلية والدولية بكفاءة عالية وخبرة معترف بها.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="الاستشارات القانونية">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">الاستشارات القانونية</h3>
+            <p class="service-card__desc">رأي قانوني دقيق وموضوعي يساعدك على اتخاذ القرارات الصحيحة في الوقت المناسب.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="العقود">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-file-contract"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">صياغة العقود</h3>
+            <p class="service-card__desc">صياغة ومراجعة وتفسير العقود بدقة قانونية تحمي حقوقك في كل الظروف.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="القضايا المدنية">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-gavel"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">القضايا المدنية</h3>
+            <p class="service-card__desc">دفاع قوي ومدروس في النزاعات المدنية بكل أنواعها أمام مختلف درجات التقاضي.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="القضايا الجنائية">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">القضايا الجنائية</h3>
+            <p class="service-card__desc">دفاع لا هوادة فيه لحماية حقوقك وضمان محاكمة عادلة وفق أرقى المعايير القانونية.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+          <article class="service-card reveal-up" tabindex="0" aria-label="الملكية الفكرية">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="service-card__glow" aria-hidden="true"></div>
+            <h3 class="service-card__title">الملكية الفكرية</h3>
+            <p class="service-card__desc">حماية براءات الاختراع والعلامات التجارية وحقوق النشر والأسرار التجارية بشكل احترافي.</p>
+            <a href="#contact" class="service-card__cta">
+              استفسر الآن <i class="fas fa-arrow-left"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ WHY CHOOSE US ═══════════════════════════════ -->
+    <section class="why" id="why" aria-label="لماذا تختارنا">
+      <div class="why__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-label">ميزتنا التنافسية</div>
+          <h2 class="section-title">لماذا تختار <span class="text-gold">وعي للمحاماة</span>؟</h2>
+        </div>
+
+        <div class="why__grid">
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">01</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
+            <h3>الخبرة القانونية</h3>
+            <p>فريقنا يجمع بين الدراية الأكاديمية العميقة والتجربة الميدانية الثرية في أعقد القضايا.</p>
+          </div>
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">02</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-medal"></i></div>
+            <h3>الاحترافية العالية</h3>
+            <p>نلتزم بأعلى معايير المهنة القانونية في كل مرحلة من مراحل التقاضي والتفاوض.</p>
+          </div>
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">03</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-lock"></i></div>
+            <h3>السرية التامة</h3>
+            <p>معلوماتك محمية بسياسة سرية صارمة؛ ثقتك أمانة لا نتنازل عنها تحت أي ظرف.</p>
+          </div>
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">04</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+            <h3>سرعة الاستجابة</h3>
+            <p>ندرك أن الوقت عامل حاسم في القانون؛ لذا نرد على استفساراتك خلال ساعات قليلة.</p>
+          </div>
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">05</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-chess-king"></i></div>
+            <h3>الحلول الاستراتيجية</h3>
+            <p>لا نقدم حلولاً جاهزة؛ نبني استراتيجية قانونية مصممة خصيصاً لقضيتك وأهدافك.</p>
+          </div>
+
+          <div class="why__card reveal-up">
+            <div class="why__card-num" aria-hidden="true">06</div>
+            <div class="why__card-icon" aria-hidden="true"><i class="fas fa-globe"></i></div>
+            <h3>الوصول الدولي</h3>
+            <p>شبكة علاقات دولية تمكننا من تقديم الدعم القانوني عبر حدود متعددة.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ TEAM ═══════════════════════════════ -->
+    <section class="team" id="team" aria-label="فريق العمل">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-label">خبراتنا البشرية</div>
+          <h2 class="section-title">فريق <span class="text-gold">قانوني نخبوي</span></h2>
+          <p class="section-desc">يجمعنا شغف واحد: تحقيق العدالة والدفاع عن حقوقكم بلا تهاون</p>
+        </div>
+
+        <div class="team__grid">
+
+          <article class="team-card reveal-up" tabindex="0">
+            <div class="team-card__avatar" aria-hidden="true">
+              <div class="team-card__avatar-inner">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="team-card__avatar-ring"></div>
+            </div>
+            <div class="team-card__info">
+              <h3>المستشار عبدالرحمن الحارثي</h3>
+              <span class="team-card__role">مؤسس المكتب | رئيس قسم التحكيم</span>
+              <p>خبرة تتجاوز 20 عاماً في قضايا التحكيم الدولي والنزاعات التجارية الكبرى.</p>
+            </div>
+            <div class="team-card__social">
+              <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="بريد إلكتروني"><i class="fas fa-envelope"></i></a>
+            </div>
+          </article>
+
+          <article class="team-card reveal-up" tabindex="0">
+            <div class="team-card__avatar" aria-hidden="true">
+              <div class="team-card__avatar-inner">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="team-card__avatar-ring"></div>
+            </div>
+            <div class="team-card__info">
+              <h3>الأستاذة نورة العسكر</h3>
+              <span class="team-card__role">شريك | رئيسة قسم قانون الشركات</span>
+              <p>متخصصة في قانون الأعمال وحوكمة الشركات بخبرة 15 عاماً في السوق المحلية والإقليمية.</p>
+            </div>
+            <div class="team-card__social">
+              <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="بريد إلكتروني"><i class="fas fa-envelope"></i></a>
+            </div>
+          </article>
+
+          <article class="team-card reveal-up" tabindex="0">
+            <div class="team-card__avatar" aria-hidden="true">
+              <div class="team-card__avatar-inner">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="team-card__avatar-ring"></div>
+            </div>
+            <div class="team-card__info">
+              <h3>الأستاذ فهد المطيري</h3>
+              <span class="team-card__role">محامٍ أول | قسم الملكية الفكرية</span>
+              <p>رائد في قانون الملكية الفكرية والتقنية، حصل على جوائز متعددة في هذا التخصص.</p>
+            </div>
+            <div class="team-card__social">
+              <a href="#" aria-label="لينكدإن"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" aria-label="بريد إلكتروني"><i class="fas fa-envelope"></i></a>
+            </div>
+          </article>
+
+         
+<article class="team-card reveal-up" tabindex="0">
+<div class="team-card__avatar" aria-hidden="true">
+  <div class="team-card__avatar-inner">
+    <i class="fas fa-laptop-code"></i>
+  </div>
+  <div class="team-card__avatar-ring"></div>
+</div>
+
+<div class="team-card__info">
+  <h3>
+    <a href="https://www.linkedin.com/in/kinani9/" target="_blank">
+      المهندس أيمن الكناني  
+    </a>
+  </h3>
+
+  <span class="team-card__role">
+     قسم تقنية المعلومات
+  </span>
+
+  <p>
+    مسؤول عن تطوير الهوية الرقمية للموقع 
+  </p>
+</div>
+
+<div class="team-card__social">
+  <a href="https://www.linkedin.com/in/kinani9/" aria-label="لينكدإن">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kinaniayman50@gmail.com"
+  target="_blank" aria-label="بريد إلكتروني">
+    <i class="fas fa-envelope"></i>
+  </a>
+</div>
+</article>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+    <section class="contact" id="contact" aria-label="تواصل معنا">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <div class="section-label">نحن بانتظارك</div>
+          <h2 class="section-title">تواصل مع <span class="text-gold">فريقنا</span></h2>
+          <p class="section-desc">استشارتك الأولى مجانية. دعنا نستمع إلى قضيتك ونرسم معاً طريق النجاح.</p>
+        </div>
+
+        <div class="contact__grid">
+ 
+        <!-- Form -->
+        <div class="contact__form-wrap reveal-left">
+          <form class="contact__form" id="contact-form" novalidate aria-label="نموذج التواصل">
+
+            <!-- Web3Forms hidden fields -->
+            <input type="hidden" name="access_key" value="109efbd8-59fc-4f10-8e72-df48bb6f7970" />
+            <input type="hidden" name="subject" value="طلب استشارة قانونية جديدة — وعي للمحاماة" />
+            <input type="hidden" name="from_name" value="موقع وعي للمحاماة" />
+            <input type="hidden" name="redirect" value="false" />
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
+            <div class="contact__form-group">
+              <label for="name" class="contact__label">الاسم الكامل</label>
+              <input type="text" id="name" name="name" class="contact__input" placeholder="أدخل اسمك الكامل" required aria-required="true" />
+            </div>
+            <div class="contact__form-group">
+              <label for="email" class="contact__label">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" class="contact__input" placeholder="example@email.com" required aria-required="true" />
+            </div>
+            <div class="contact__form-group">
+              <label for="phone" class="contact__label">رقم الجوال</label>
+              <input type="tel" id="phone" name="phone" class="contact__input" placeholder="+966 5X XXX XXXX" />
+            </div>
+            <div class="contact__form-group">
+              <label for="service" class="contact__label">نوع الخدمة</label>
+              <select id="service" name="service" class="contact__input contact__select" aria-label="اختر نوع الخدمة">
+                <option value="" disabled selected>اختر نوع الخدمة</option>
+                <option value="القضايا التجارية">القضايا التجارية</option>
+                <option value="قضايا الشركات">قضايا الشركات</option>
+                <option value="التحكيم">التحكيم</option>
+                <option value="استشارة قانونية">استشارة قانونية</option>
+                <option value="صياغة عقود">صياغة عقود</option>
+                <option value="القضايا المدنية">القضايا المدنية</option>
+                <option value="القضايا الجنائية">القضايا الجنائية</option>
+                <option value="الملكية الفكرية">الملكية الفكرية</option>
+              </select>
+            </div>
+            <div class="contact__form-group contact__form-group--full">
+              <label for="message" class="contact__label">تفاصيل القضية</label>
+              <textarea id="message" name="message" class="contact__input contact__textarea" placeholder="اشرح قضيتك باختصار..." rows="4" required aria-required="true"></textarea>
+            </div>
+            <button type="submit" class="btn btn--gold btn--full btn--lg" id="submit-btn">
+              <i class="fas fa-paper-plane"></i>
+              إرسال الطلب
+            </button>
+            <div class="contact__form-note">
+              <i class="fas fa-lock"></i>
+              بياناتك محمية بسياسة سرية تامة
+            </div>
+          </form>
+        </div>
+
+          <!-- Info -->
+          <div class="contact__info reveal-right">
+            <div class="contact__info-card">
+              <div class="contact__info-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>موقعنا</strong>
+               <p>📍الخرطوم | بورتسودان | شرق النيل</p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon" aria-hidden="true"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <strong>اتصل بنا</strong>
+                <p dir="ltr">00249999963440</p>
+                <p dir="ltr">00249123717264</p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>البريد الإلكتروني</strong>
+                <p>kinaniayman50@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact__info-card">
+              <div class="contact__info-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong>أوقات العمل</strong>
+                <p>الأحد — الخميس: 8 صباحاً — 8 مساءً</p>
+                <p>للطوارئ: 24/7</p>
+              </div>
+            </div>
+
+            <!-- Quick contact buttons -->
+            <div class="contact__quick">
+              <a href="https://wa.me/00249999963440" class="contact__quick-btn contact__quick-btn--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+                <i class="fab fa-whatsapp"></i>
+                واتساب الآن
+              </a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kinaniayman50@gmail.com" class="contact__quick-btn contact__quick-btn--email" aria-label="راسلنا على البريد">
+                <i class="fas fa-envelope"></i>
+                راسلنا
+              </a>
+            </div>
+
+            <!-- Map placeholder -->
+            <div class="contact__map" aria-label="موقع المكتب على الخريطة">
+              <div class="contact__map-inner">
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                <p>📍الخرطوم | بورتسودان | شرق النيل</p>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="contact__map-link">
+                  عرض على الخريطة <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+
+          <!-- Brand -->
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <div class="footer__logo-emblem" aria-hidden="true">
+                <svg viewBox="0 0 50 50" fill="none">
+                  <polygon points="25,3 47,39 3,39" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+                  <circle cx="25" cy="25" r="5" fill="#C9A84C"/>
+                </svg>
+              </div>
+              <div>
+                <span class="footer__logo-ar">وعي</span>
+                <span class="footer__logo-sub">للمحاماة</span>
+              </div>
+            </div>
+            <p class="footer__brand-desc">
+              مكتب قانوني متخصص يرتكز على الخبرة والنزاهة، يقدم حلولاً قانونية استراتيجية للأفراد والشركات.
+            </p>
+            <div class="footer__social" aria-label="منصات التواصل الاجتماعي">
+              <a href="https://wa.me/00249999963440" class="footer__social-link" aria-label="واتساب" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://www.instagram.com/waey_law_firm/" class="footer__social-link" aria-label="إنستغرام"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">روابط سريعة</h3>
+            <ul class="footer__links" role="list">
+              <li><a href="#hero" class="footer__link">الرئيسية</a></li>
+              <li><a href="#about" class="footer__link">عن المكتب</a></li>
+              <li><a href="#services" class="footer__link">الخدمات</a></li>
+              <li><a href="#team" class="footer__link">فريق العمل</a></li>
+              <li><a href="#contact" class="footer__link">تواصل معنا</a></li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">خدماتنا</h3>
+            <ul class="footer__links" role="list">
+              <li><a href="#services" class="footer__link">القضايا التجارية</a></li>
+              <li><a href="#services" class="footer__link">قضايا الشركات</a></li>
+              <li><a href="#services" class="footer__link">التحكيم الدولي</a></li>
+              <li><a href="#services" class="footer__link">الاستشارات القانونية</a></li>
+              <li><a href="#services" class="footer__link">الملكية الفكرية</a></li>
+              <li><a href="#services" class="footer__link">القضايا الجنائية</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer__col">
+            <h3 class="footer__col-title">تواصل معنا</h3>
+            <ul class="footer__contact-list" role="list">
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                <span>الرياض، المملكة العربية السعودية</span>
+              </li>
+              <li>
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <a href="tel:00249999963440" dir="ltr">00249999963440</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kinaniayman50@gmail.com"
+                target="_blank">kinaniayman50@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copy">جميع الحقوق محفوظة © <span id="year"></span> وعي للمحاماة</p>
+          <p class="footer__dev">
+            تطوير وتصميم بواسطة
+            <a href="https://www.linkedin.com/in/kinani9/" target="_blank" rel="noopener noreferrer" class="footer__dev-link">
+              <i class="fab fa-linkedin" aria-hidden="true"></i> KIN
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════ FLOATING WHATSAPP ═══════════════════════════════ -->
+  <a href="https://wa.me/00249999963440" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="whatsapp-float__pulse" aria-hidden="true"></span>
+  </a>
+
+  <!-- ═══════════════════════════════ BACK TO TOP ═══════════════════════════════ -->
+  <button class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
